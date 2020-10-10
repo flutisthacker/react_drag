@@ -16,16 +16,18 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-export default App = () => {
-  const [listItems, setListItems] = useState(initialItems)
+export default function App() {
+  const [listItems, setListItems] = useState(initialItems);
   const onDragEnd = (result) => {
-    if (!result.destination) return
+    if (!result.destination) return;
     const items = reorder(
       listItems,
       result.source.index,
       result.destination.index
     );
     setListItems(items);
+  };
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="droppable">
@@ -37,8 +39,8 @@ export default App = () => {
           >
             {listItems.map((item, index) => (
               <Draggable key={item.id} draggableId={item.id} index={index}>
-                {(provided, snapshot) => ( 
-                                   <div
+                {(provided, snapshot) => (
+                  <div
                     className="item"
                     ref={provided.innerRef}
                     {...provided.draggableProps}
@@ -46,7 +48,7 @@ export default App = () => {
                   >
                     {item.content}
                   </div>
-            )}
+                )}
               </Draggable>
             ))}
             {provided.placeholder}
