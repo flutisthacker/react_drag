@@ -1,0 +1,19 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.list {
+  margin: 0 auto;
+  width: 18rem;
+  border: 2px dashed #828282;
+  padding: 1em;
+}
+
+.item {
+  background: #45fced;
+  color: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
